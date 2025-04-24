@@ -1,1 +1,619 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --ncgr_primary_bg_color: #166a45;
+    --ncgr_secondary_bg_color: #d4a844;
+    --ncgr_gray_bg_color: #f3f3f3;
+    --ncgr_dark_green_bg_color: #074d31;
+    --ncgr_txt_font: IBM Plex Sans Arabic;
+    --ncgr_txt_color-dark: #222222;
+    --ncgr_txt_color-light: #FFFFFF;
+    --ncgr_txt_color-primary: #166a45;
+    --ncgr_txt_color-secondary: #d4a844;
+    --ncgr_txt_color-secondary-light: #fedf89;
+    --ncgr_box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, .2);
+    --ncgr_home-sections-padding-t-b: 50px;
+}
+
+
+/* ------------------------| General |------------------------ */
+
+body {
+    font-family: var(--ncgr_txt_font), sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #fafafa;
+}
+
+.container-xxl {
+    max-width: 90%;
+}
+
+.dashboard-pages .container-xxl {
+    max-width: 98%;
+}
+
+h1 {
+    font-size: 2.0rem;
+    color: var(--ncgr_txt_color-primary);
+    margin-bottom: 20px;
+}
+
+.dashboard-pages h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+h5 {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+h6 {
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.justify-txt {
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.lh18 {
+    line-height: 1.8;
+}
+
+.lh2 {
+    line-height: 2;
+}
+
+.btn-primary {
+    background-color: var(--ncgr_primary_bg_color);
+    border-color: var(--ncgr_primary_bg_color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all ease-in 0.15s;
+}
+
+.btn-primary:hover {
+    background-color: var(--ncgr_dark_green_bg_color);
+}
+
+.btn-light {
+    background-color: #fff;
+    border-color: #d2d6db;
+    font-weight: 500;
+    padding: 10px 25px;
+    transition: all ease-in 0.15s;
+}
+
+.btn-light:hover {
+    background-color: var(--ncgr_primary_bg_color);
+    border-color: var(--ncgr_dark_green_bg_color);
+    color: #FFF;
+}
+
+body::-webkit-scrollbar {
+    width: auto;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--ncgr_gray_bg_color);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--ncgr_dark_green_bg_color);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid #fff;
+    /* creates padding around scroll thumb */
+}
+
+
+/* ------------------------| R01 |------------------------ */
+
+.ncgr-r01 {
+    color: var(--ncgr_txt_color-light);
+    background: var(--ncgr_primary_bg_color);
+    min-height: 50px;
+}
+
+.ncgr-r01 .row {
+    min-height: 50px;
+}
+
+
+/* ------------------------| R02 Menu |------------------------ */
+
+.ncgr-r02-menu {
+    background: var(--ncgr_gray_bg_color);
+}
+
+.ncgr-r02-menu .navbar .navbar-nav .nav-link {
+    color: var(--ncgr_txt_color-dark);
+    font-weight: 500;
+    transition: all ease-in 0.15s;
+}
+
+.ncgr-r02-menu .navbar .navbar-nav .nav-link:hover {
+    color: var(--ncgr_txt_color-primary);
+}
+
+.ncgr-r02-menu .navbar .navbar-nav .nav-link.active,
+.ncgr-r02-menu .navbar .navbar-nav .nav-link:hover.active {
+    color: var(--ncgr_txt_color-primary);
+    font-weight: 500;
+    border-bottom: 3px solid var(--ncgr_secondary_bg_color);
+}
+
+.ncgr-r02-menu .navbar .navbar-nav .nav-item {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+
+/* dropdown Menu Style, Hover & animation */
+
+.ncgr-r02-menu .navbar .dropdown-menu {
+    right: -10px;
+    top: 50px;
+    padding: 1rem 0.25rem;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--ncgr_box-shadow);
+    border: none;
+    transition: all ease-in 0.15s;
+}
+
+.dropdown-hover .dropdown-menu {
+    min-width: 200px;
+    margin-top: -10px;
+}
+
+.ncgr-r02-menu .navbar .dropdown-menu .dropdown-item {
+    font-weight: 500;
+    color: var(--ncgr_txt_color-dark);
+    font-size: 0.94rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all ease-in 0.15s;
+}
+
+.dropdown-hover.dropdown.dashboard * {
+    color: var(--ncgr_txt_color-dark);
+}
+
+.dropdown-hover.dropdown.dashboard .dashboard_user_name {
+    font-weight: 500;
+}
+
+.dropdown-hover.dropdown.dashboard .dashboard_role {
+    color: var(--ncgr_txt_color-primary);
+}
+
+
+/* activate hover */
+
+@media (min-width: 991px) {
+    .dropdown-hover.dropdown:hover>.dropdown-menu,
+    .dropdown-hover.dropend:hover>.dropdown-menu {
+        display: block;
+        margin-top: -10px;
+        margin-left: 0.125em;
+    }
+    .dropdown-hover.dashboard.dropdown:hover>.dropdown-menu,
+    .dropdown-hover.dashboard.dropend:hover>.dropdown-menu {
+        margin-top: 0px;
+    }
+    .dropdown-hover.dropend:hover>.dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+    }
+    .dropdown-hover.dropend .dropdown-toggle {
+        margin-left: 0.5em;
+    }
+}
+
+@media (min-width: 200px) {
+    .animate {
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
+
+
+/* lang switch */
+
+.lang-switch {
+    text-decoration: none;
+    color: var(--ncgr_txt_color-dark);
+    font-weight: 500;
+}
+
+.lang-switch:hover {
+    color: var(--ncgr_txt_color-primary);
+}
+
+
+/* ------------------------| R03 carousel |------------------------ */
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 5%;
+}
+
+
+/* ------------------------| R04 Welcome |------------------------ */
+
+.ncgr-r04-welcome {
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+
+/* ------------------------| R05 News |------------------------ */
+
+.ncgr-r05-news {
+    background-color: var(--ncgr_gray_bg_color);
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+.ncgr-home-news-box {
+    background: #FFF;
+    box-shadow: var(--ncgr_box-shadow);
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.ncgr-home-news-box .new-img {
+    border-radius: 10px;
+}
+
+.home-newsbox-title {
+    font-size: 1.1rem;
+    color: var(--ncgr_txt_color-primary);
+    font-weight: 500;
+}
+
+.home-newsbox-brif {
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #000;
+}
+
+
+/* ------------------------| R06 statistics |------------------------ */
+
+.ncgr-r06-statistics {
+    background-color: var(--ncgr_primary_bg_color);
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+.ncgr-r06-statistics h1 {
+    color: #fff;
+}
+
+.ncgr-r06-statistics h6 {
+    color: var(--ncgr_txt_color-secondary-light);
+}
+
+.home-statistics-date {
+    color: #fff;
+    font-weight: 500;
+}
+
+.ncgr-home-stat-box {
+    text-align: center;
+    background: #FFF;
+    box-shadow: var(--ncgr_box-shadow);
+    width: calc(16.5% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.stat-box-icon img {
+    display: inline-block;
+    max-width: 60px;
+    height: auto;
+}
+
+.stat-box-numb {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--ncgr_txt_color-primary);
+}
+
+.stat-box-title {
+    margin-top: -10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+
+/* ------------------------| R07 partners |------------------------ */
+
+
+/* https://library.livecanvas.com/sections/  */
+
+.ncgr-r07-partners {
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+
+/* ------------------------| R08  big-footer |------------------------ */
+
+.ncgr-r08-big-footer {
+    color: var(--ncgr_txt_color-light);
+    background: var(--ncgr_dark_green_bg_color);
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+.big-footer-col-title {
+    font-weight: 500;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(249, 250, 251, 0.3);
+}
+
+.big-footer-col-links li {
+    margin-bottom: 18px;
+}
+
+.big-footer-col-links a {
+    display: inline-block;
+    color: #fff;
+}
+
+.big-footer-col-links a:hover {
+    color: var(--ncgr_txt_color-secondary-light);
+}
+
+.ncgr-r08-big-footer .btn-outline-light {
+    font-weight: 500;
+    border-color: rgba(249, 250, 251, 0.3);
+}
+
+.ncgr-r08-big-footer .btn-outline-light:hover {
+    color: #fff;
+    background-color: var(--ncgr_primary_bg_color);
+}
+
+.footer-copyr-01 a {
+    margin: 0 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+.footer-copyr-01 a:hover {
+    text-decoration: none;
+    color: var(--ncgr_txt_color-secondary-light);
+}
+
+.footer-copyr-02 {
+    font-weight: 500;
+}
+
+.footer-copyr-03 {
+    font-size: 0.9rem;
+}
+
+
+/* ------------------------| inner master | main content |------------------------ */
+
+.ncgr-main-area {
+    padding-top: var(--ncgr_home-sections-padding-t-b);
+    padding-bottom: var(--ncgr_home-sections-padding-t-b);
+}
+
+
+/* ------------------------| inner master | breadcrumb_area |------------------------ */
+
+.breadcrumb_area {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d2d6db;
+}
+
+.breadcrumb a {
+    color: var(--ncgr_txt_color-dark);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--ncgr_txt_color-primary);
+}
+
+
+/* ------------------------| Dashbard master | dashboard-side-menu |------------------------ */
+
+.dashboard-side-menu {
+    background: var(--ncgr_primary_bg_color);
+    border-radius: 10px;
+    padding: 5px;
+    padding-bottom: 30px;
+}
+
+.dashboard-side-menu .nav-item {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.dashboard-side-menu .nav-pills .nav-link {
+    position: relative;
+    color: #FFF;
+    transition: all ease-in 0.15s;
+}
+
+.dashboard-side-menu .nav-pills .nav-link.collapse-link {
+    border-bottom: 1px dashed rgba(249, 250, 251, 0.3);
+}
+
+.dashboard-side-menu .nav-pills .nav-link.collapse-link::after {
+    display: block;
+    position: absolute;
+    // content: url(../img/icons/arrow_light.png);
+    left: 10px;
+    top: calc( 50% - 12px);
+}
+
+.dashboard-side-menu .nav-pills .nav-link.lv1 {
+    font-weight: 500;
+}
+
+.dashboard-side-menu .nav-pills .nav-link:hover {
+    color: #FFF;
+    background-color: rgba(249, 250, 251, 0.1);
+}
+
+.dashboard-side-menu .nav-pills .nav-link.active,
+.dashboard-side-menu .nav-pills .nav-link.active:hover,
+.dashboard-side-menu .nav-pills .show>.nav-link {
+    color: #FFF;
+    background-color: rgba(249, 250, 251, 0.1);
+}
+
+
+/*====================================================================================================
+esponcive Cases |----------------------------- |
+=================================================================*/
+
+
+/* ----------------------------- | LG (max-width: 992px) |----------------------------- */
+
+@media only screen and (max-width:1600px) {
+    .container-xxl {
+        width: 95%;
+        max-width: 95%;
+    }
+    .dashboard-pages .container-xxl {
+        width: 98%;
+        max-width: 98%;
+    }
+    h1 {
+        font-size: 1.5rem;
+        color: var(--ncgr_txt_color-primary);
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    h5 {
+        font-size: 0.94rem;
+        margin-bottom: 10px;
+    }
+    h6 {
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width:1280px) {
+    .ncgr-home-stat {
+        flex-wrap: wrap;
+    }
+    .ncgr-home-stat-box {
+        flex: 1 1 calc(33.33% - 30px);
+        width: calc(33.33% - 30px);
+        max-width: calc(33.33% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .ncgr-home-news-box {
+        width: calc(100% - 60px);
+        margin: 30px;
+    }
+    .ncgr-home-news-box .new-img {
+        margin-top: 20px;
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .ncgr-home-stat-box {
+        flex: 1 1 calc(50% - 30px);
+        width: calc(50% - 30px);
+        max-width: calc(50% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .ncgr-home-stat-box {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+}
