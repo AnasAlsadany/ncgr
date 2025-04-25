@@ -5,20 +5,25 @@ import { FormsComponent } from './pages/dashboard/pages/pages/forms/forms.compon
 import { HelpComponent } from './pages/dashboard/pages/pages/help/help.component';
 import { ProfileComponent } from './pages/dashboard/pages/pages/profile/profile.component';
 import { SettingsComponent } from './pages/dashboard/pages/pages/settings/settings.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 export const routes: Routes = [
 
     {
         path: 'dashboard',
-        component: DashboardLayoutComponent, 
+        component: DashboardLayoutComponent,
         children: [
-            
-                { path: '', component: DashboardComponent }, 
+
+                { path: '', component: DashboardComponent },
                 { path: 'forms', component: FormsComponent },
                 { path: 'profile', component: ProfileComponent },
                 { path: 'settings', component: SettingsComponent },
                 { path: 'help', component: HelpComponent },
-              
+
         ]
       },
+      {
+        path: 'homepage',
+        component: HomepageComponent,
+      }
 ];

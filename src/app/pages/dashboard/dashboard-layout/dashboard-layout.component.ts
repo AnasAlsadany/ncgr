@@ -4,11 +4,12 @@ import { HeaderComponent } from '../header/header.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from "../pages/pages/dashboard/footer/footer.component";
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { HomepageComponent } from '../../homepage/homepage.component';
 
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,
-  imports: [HeaderComponent, SidebarComponent, RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [HeaderComponent, RouterOutlet, NavbarComponent, FooterComponent,HomepageComponent],
   templateUrl: './dashboard-layout.component.html',
   styleUrl: './dashboard-layout.component.scss'
 })
