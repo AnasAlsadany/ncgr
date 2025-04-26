@@ -255,6 +255,57 @@ header.main_header {
     }
 }
 
+.user_details {
+    display: flex;
+    align-items: start;
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .user_date {
+        padding-inline-start: 10px;
+        h6 {
+            color: $text-color;
+            font-size: $main-fontSize-16;
+            font-weight: 500;
+        }
+        span {
+            color: $main-background-color;
+            font-size: $main-fontSize-14;
+        }
+    }
+    i {
+        position: relative;
+        right: 10px;
+        top: 5px;
+    }
+}
+
+.log_in_case ::after {
+    display: none !important;
+}
+
+.user_menu_list {
+    li a {
+        @include flex-bar-start;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+        span {
+            color: $text-color;
+            font-size: $main-fontSize-16;
+            padding-inline-start: 5px;
+        }
+    }
+}
+
+button:active {
+    outline: none !important;
+    border-style: none;
+}
+
 // ******************** general style ***********
 .btn_general {
     a {
@@ -523,6 +574,10 @@ footer.footer_sec {
 .inner_banner {
     width: 100%;
     height: 160px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .sm_inner_header {
@@ -546,6 +601,9 @@ footer.footer_sec {
             }
             &.link_page {
                 color: #384250;
+                &:hover {
+                    color: inherit;
+                }
             }
         }
     }
@@ -593,4 +651,133 @@ footer.footer_sec {
 .img_side_1 {
     width: 100%;
     height: 300px;
+}
+
+// *****************TrainingServices
+.search_box {
+    @include flex-bar-between;
+    margin: 20px 0;
+    .search_input {
+        @include flex-bar-start;
+        width: 95%;
+        border: 1px solid #d2d6db;
+        padding: 5px 10px;
+        border-radius: 6px;
+        color: #9DA4AE;
+        input {
+            width: 100%;
+            border: unset;
+            padding-inline-start: 15px;
+        }
+    }
+    button.search_btn {
+        padding: 5px 10px;
+        border: unset;
+        border-radius: 6px;
+        background: #f5f5f5;
+        color: #9DA4AE;
+    }
+}
+
+.card_g {
+    @include flex-bar-between;
+    align-items: start;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: 0px 2px 8px #afafaf;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+}
+
+.card_img {
+    width: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 140px;
+    max-width: 140px;
+    height: 300px;
+    img {
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+.card_details_data {
+    padding-inline-start: 15px;
+    position: relative;
+    height: 300px;
+    p {
+        font-size: $main-fontSize-14;
+        font-weight: 400;
+        padding: 10px 0;
+    }
+    .title_card {
+        @include flex-bar-between;
+        padding-bottom: 20px;
+        h5 {
+            font-size: $main-fontSize-14;
+            color: $main-background-color;
+            width: 60%;
+        }
+        span {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            width: 40%;
+            color: #9DA4AE;
+            i {
+                color: #f79009;
+            }
+        }
+    }
+    .government {
+        padding: 5px 0;
+        font-size: 16px;
+        color: #384250;
+        span {
+            padding-inline-start: 8px
+        }
+    }
+    .all-rebort {
+        @include flex-bar-between;
+        padding: 10px 0;
+        .edite_rebort,
+        .lang_card {
+            padding: 5px 10px;
+            text-align: center;
+            background: #d5eae8;
+            border-radius: 8px;
+            font-size: $main-fontSize-14;
+        }
+        .lang_card {
+            width: 40%;
+        }
+        .edite_rebort {
+            width: 57%;
+        }
+    }
+    .log_card {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        a {
+            width: 80%;
+            text-align: center;
+            background: $main-background-color;
+            border-radius: 6px;
+            padding: 5px;
+            color: $white-color;
+        }
+        span {
+            color: $main-background-color;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
 }

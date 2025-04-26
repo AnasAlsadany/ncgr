@@ -7,6 +7,8 @@ import { ProfileComponent } from './pages/dashboard/pages/pages/profile/profile.
 import { SettingsComponent } from './pages/dashboard/pages/pages/settings/settings.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutAcademyComponent } from './pages/about-academy/about-academy.component';
+import { TrainingServicesComponent } from './pages/training-services/training-services.component';
+import { CreateTrainingServicesComponent } from './pages/create-training-services/create-training-services.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +21,9 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'help', component: HelpComponent },
+      { path: 'aboutacademy', component: AboutAcademyComponent },
+      { path: 'TrainingServices', component: TrainingServicesComponent },
+      { path: 'CreateTrainingServices', component: CreateTrainingServicesComponent },
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
