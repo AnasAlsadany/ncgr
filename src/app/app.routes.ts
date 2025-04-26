@@ -6,6 +6,7 @@ import { HelpComponent } from './pages/dashboard/pages/pages/help/help.component
 import { ProfileComponent } from './pages/dashboard/pages/pages/profile/profile.component';
 import { SettingsComponent } from './pages/dashboard/pages/pages/settings/settings.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { AboutAcademyComponent } from './pages/about-academy/about-academy.component';
 
 export const routes: Routes = [
 
@@ -25,5 +26,9 @@ export const routes: Routes = [
       {
         path: 'homepage',
         component: HomepageComponent,
+      },
+      {
+        path: 'aboutacademy',
+        component: AboutAcademyComponent,
       }
 ];

@@ -518,3 +518,79 @@ footer.footer_sec {
         margin-inline-start: 20px;
     }
 }
+
+// ************************ about academy page *********
+.inner_banner {
+    width: 100%;
+    height: 160px;
+}
+
+.sm_inner_header {
+    margin-top: 20px;
+    @include flex-bar-between;
+    border-bottom: 1px solid #D2D6DB;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb_inner {
+    ul {
+        display: flex;
+        align-items: center;
+        li {
+            color: #9DA4AE;
+            font-size: $main-fontSize-16;
+            font-weight: 400;
+            img {
+                margin: 0 10px;
+            }
+            &.link_page {
+                color: #384250;
+            }
+        }
+    }
+}
+
+.share_btns {
+    @include flex-bar-end;
+    a img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+    }
+}
+
+.details_side {
+    h6 {
+        color: $text-color;
+        font-size: $main-fontSize-20;
+        padding-bottom: 20px;
+        font-weight: 500;
+    }
+    p {
+        font-size: $main-fontSize-16;
+        font-weight: 400;
+    }
+    span {
+        color: $text-color;
+        font-size: $main-fontSize-16;
+        display: block;
+        position: relative;
+        padding-inline-start: 20px;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: $main-background-color;
+            right: 0;
+            top: 10px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.img_side_1 {
+    width: 100%;
+    height: 300px;
+}
