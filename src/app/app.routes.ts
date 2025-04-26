@@ -9,26 +9,17 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutAcademyComponent } from './pages/about-academy/about-academy.component';
 
 export const routes: Routes = [
-
-    {
-        path: 'dashboard',
-        component: DashboardLayoutComponent,
-        children: [
-
-                { path: '', component: DashboardComponent },
-                { path: 'forms', component: FormsComponent },
-                { path: 'profile', component: ProfileComponent },
-                { path: 'settings', component: SettingsComponent },
-                { path: 'help', component: HelpComponent },
-
-        ]
-      },
-      {
-        path: 'homepage',
-        component: HomepageComponent,
-      },
-      {
-        path: 'aboutacademy',
-        component: AboutAcademyComponent,
-      }
+  {
+    path: '',
+    component: DashboardLayoutComponent,
+    children: [
+      { path: '', component: HomepageComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'forms', component: FormsComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'settings', component: SettingsComponent },
+      { path: 'help', component: HelpComponent },
+    ]
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
