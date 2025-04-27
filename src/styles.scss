@@ -147,6 +147,17 @@ button:focus {
     margin: 0 auto;
 }
 
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1500px;
+    }
+}
+
 // *************************************************
 .sub_header {
     background: $main-background-color;
@@ -676,6 +687,10 @@ footer.footer_sec {
         border-radius: 6px;
         background: #f5f5f5;
         color: #9DA4AE;
+        svg {
+            width: 20px !important;
+            height: 20px !important;
+        }
     }
 }
 
@@ -780,4 +795,297 @@ footer.footer_sec {
             font-size: 20px;
         }
     }
+}
+
+// ******************* sidebar page dashboard pafe ****************
+.side_bar {
+    background: $main-background-color;
+    border-radius: 10px;
+    padding: 5px;
+    padding-bottom: 30px;
+}
+
+.dashboard_pg_sec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    .dashboard_link_sec {
+        width: 250px;
+    }
+    .dashboard_cards_sec {
+        width: calc(100% - 290px);
+    }
+}
+
+.list-sidbar {
+    padding: 15px;
+    h4 {
+        color: $white-color;
+        font-size: $main-fontSize-18;
+        font-weight: 600;
+    }
+    hr {
+        margin: 1rem 0;
+        opacity: 0.25;
+        color: rgb(172 172 172);
+    }
+    ul {
+        li {
+            margin: 2px 0;
+            width: 100%;
+            a {
+                @include flex-bar-start;
+                position: relative;
+                color: $white-color;
+                transition: all ease-in 0.15s;
+                font-weight: 500;
+                padding: .5rem 1rem;
+                border-radius: 6px;
+                width: 100%;
+                &.active,
+                &:hover {
+                    color: $white-color;
+                    background-color: rgba(249, 250, 251, 0.1);
+                    transition: all ease-in 0.15s;
+                }
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+                span {
+                    position: relative;
+                    color: $white-color;
+                    padding-inline-start: 10px;
+                    font-size: $main-fontSize-14;
+                }
+            }
+            p {
+                width: 100%;
+                a {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+ul.sm_list_dashboard {
+    li {
+        margin: 0;
+        a {
+            padding: 0.1rem 1rem;
+            padding-inline-start: 50px;
+            position: relative;
+            font-size: 12px;
+            &:before {
+                position: absolute;
+                content: '';
+                width: 5px;
+                height: 5px;
+                background: #ffffff;
+                right: 30px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+// *********************** card inner page *********
+.card_inner {
+    background: #fafafa;
+    border: 1px solid #D9D9D9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.d_inner_card {
+    display: flex;
+}
+
+.img_inner_card {
+    width: 138px;
+    height: 168px;
+    max-width: 138px;
+    min-width: 138px;
+    max-height: 168px;
+    min-height: 168px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img_inner_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text_inner_side {
+    padding-inline-start: 5px;
+    width: calc(100% - 130px);
+}
+
+.head_text {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.head_text h6 {
+    color: #216445;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.option_inner_card {
+    position: relative;
+    .option_btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+}
+
+.sm_card_option_1 {
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fafafa;
+    border: 1px solid #D9D9D9;
+    position: absolute;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sm_card_option_1 .d_sm_row h6 {
+    color: #a2a2a2;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.sm_card_option_1 .d_sm_row h6 span {
+    padding-inline-start: 5px;
+}
+
+.title_text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #595959;
+}
+
+.title_text span,
+.title_text em {
+    color: #595959;
+}
+
+.option_btn:hover~.sm_card_option_1 {
+    transition: .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.government_type {
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.government_type svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.government_type span {
+    font-size: 14px;
+    padding-inline-start: 5px;
+}
+
+.framer-1pc3pel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.framer-1pc3pel .framer-1pc3pel_text {
+    background: #e7f0ec;
+    padding: 5px 5px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.post_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 20px 0;
+}
+
+.post_details .post_type {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.post_details .post_type span {
+    font-size: 16px;
+    padding-inline-end: 10px;
+}
+
+.post_details .post_type select {
+    margin-inline-start: 10px;
+    border: 1px solid #d2d6db;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.post_details .post_date {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #e0e0e0;
+    height: 60px;
+}
+
+.footer_card_icon svg {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.footer_card_icon {
+    position: relative;
+    border-inline-end: 1px solid #e0e0e0;
+    padding-inline-end: 20px;
+}
+
+.footer_card_icon span {
+    position: absolute;
+    bottom: -50px;
+    right: -10px;
+    width: max-content;
+    background-color: #0000008c;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px #0000000d;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    color: #fff;
+}
+
+.footer_card_icon:hover span {
+    opacity: 1;
+    visibility: visible;
+    color: #fff;
+}
+
+.footer_card_icon:last-child {
+    border-inline-end: unset;
 }
