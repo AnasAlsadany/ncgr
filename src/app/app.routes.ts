@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
-import { DashboardLayoutComponent } from './pages/dashboard/dashboard-layout/dashboard-layout.component';
-import { DashboardComponent } from './pages/dashboard/pages/pages/dashboard/dashboard.component';
-import { FormsComponent } from './pages/dashboard/pages/pages/forms/forms.component';
-import { HelpComponent } from './pages/dashboard/pages/pages/help/help.component';
-import { ProfileComponent } from './pages/dashboard/pages/pages/profile/profile.component';
-import { SettingsComponent } from './pages/dashboard/pages/pages/settings/settings.component';
+
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutAcademyComponent } from './pages/about-academy/about-academy.component';
 import { TrainingServicesComponent } from './pages/training-services/training-services.component';
 import { CreateTrainingServicesComponent } from './pages/create-training-services/create-training-services.component';
+import { DashboardComponent } from './layout/dashboard-layout/compnents/pages/pages/dashboard/dashboard.component';
+import { FormsComponent } from './layout/dashboard-layout/compnents/pages/pages/forms/forms.component';
+import { HelpComponent } from './layout/dashboard-layout/compnents/pages/pages/help/help.component';
+import { ProfileComponent } from './layout/dashboard-layout/compnents/pages/pages/profile/profile.component';
+import { SettingsComponent } from './layout/dashboard-layout/compnents/pages/pages/settings/settings.component';
+import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 
 export const routes: Routes = [
   {
@@ -26,5 +27,5 @@ export const routes: Routes = [
       { path: 'CreateTrainingServices', component: CreateTrainingServicesComponent },
     ]
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];

@@ -1,58 +1,61 @@
 <section class="academy_inner_page">
     <div class="inner_banner">
-        <img src="inner-header.png" alt="">
+      <img [src]="academyData.images.innerBanner" alt="">
     </div>
     <div class="container">
-        <div class="sm_inner_header">
-            <div class="breadcrumb_inner">
-                <ul>
-                    <li class="link_page"><a href="">الرئيسية</a> <img src="arrow_bread.svg" alt=""></li>
-                    <li>عن الاكاديمية</li>
-                </ul>
-            </div>
-            <div class="share_btns">
-                <a href=""><img src="print.svg" alt=""></a>
-                <a href=""><img src="share.svg" alt=""></a>
-                <a href=""><img src="email-icon.svg" alt=""></a>
-            </div>
+      <div class="sm_inner_header">
+        <div class="breadcrumb_inner">
+          <ul>
+            <li class="link_page">
+              <a routerLink="/">الرئيسية</a>
+              <img [src]="academyData.images.arrowBread" alt="">
+            </li>
+            <li>عن الاكاديمية</li>
+          </ul>
         </div>
-        <div class="academy_title">
-            <h5 class="title_text">
-                عن أكاديمية المركز الوطني لنظم الموارد الحكومية
-            </h5>
-            <div class="row mt-4">
-                <div class="col-md-7">
-                    <div class="details_side">
-                        <h6>نبذة عن المركز</h6>
-                        <p> المنصة التدريبية للمركز الوطني لنظم الموارد الحكومية هي أداة تعليمية متقدمة تهدف إلى تمكين الأفراد والجهات الحكومية من تطوير مهاراتهم ومعارفهم في مجالات نظم الموارد الحكومية. تقدم المنصة مجموعة متنوعة من البرامج التدريبية المصممة
-                            خصيصًا لتلبية احتياجات المتدربين، سواء عبر الدورات الذاتية أو الورش التدريبية الحضورية والافتراضية. كما تتيح المنصة مرونة في التعلم من خلال محتوى تعليمي شامل ومتاح عبر تطبيقات الأجهزة الذكية. نهدف من خلال هذه المنصة إلى تعزيز
-                            الكفاءة المهنية ودعم التحول الرقمي، بما .يتماشى مع أهداف رؤية المملكة 2030</p>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="img_side_1">
-                        <img src="inner_img_1.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-5">
-                    <div class="img_side_1">
-                        <img src="inner_img_2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="details_side">
-                        <h6>نبذة عن المركز</h6>
-                        <span>دعم التحول الرقمي: تمكين الجهات الحكومية من اعتماد الحلول التقنية الحديثة لتطوير خدماتها</span>
-                        <span>.تعزيز التكامل: تحقيق تكامل فعّال بين الجهات الحكومية من خلال أنظمة موحدة ومترابط</span>
-                        <span>دعم التحول الرقمي: تمكين الجهات الحكومية من اعتماد الحلول التقنية الحديثة لتطوير خدماتها</span>
-                        <span>.تعزيز التكامل: تحقيق تكامل فعّال بين الجهات الحكومية من خلال أنظمة موحدة ومترابط</span>
-                        <span>دعم التحول الرقمي: تمكين الجهات الحكومية من اعتماد الحلول التقنية الحديثة لتطوير خدماتها</span>
-                        <span>.تعزيز التكامل: تحقيق تكامل فعّال بين الجهات الحكومية من خلال أنظمة موحدة ومترابط</span>
-                    </div>
-                </div>
-            </div>
+        <div class="share_btns">
+          <a href=""><img [src]="academyData.images.print" alt=""></a>
+          <a href=""><img [src]="academyData.images.share" alt=""></a>
+          <a href=""><img [src]="academyData.images.email" alt=""></a>
         </div>
+      </div>
+  
+      <div class="academy_title">
+        <h5 class="title_text">
+          {{ academyData.titles.pageTitle }}
+        </h5>
+  
+        <div class="row mt-4">
+          <div class="col-md-7">
+            <div class="details_side">
+              <h6>{{ academyData.titles.firstSectionTitle }}</h6>
+              <p>{{ academyData.description }}</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="img_side_1">
+              <img [src]="academyData.images.firstSectionImage" alt="">
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mt-4">
+          <div class="col-md-5">
+            <div class="img_side_1">
+              <img [src]="academyData.images.secondSectionImage" alt="">
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="details_side">
+              <h6>{{ academyData.titles.secondSectionTitle }}</h6>
+              <span *ngFor="let point of academyData.points">
+                {{ point }}
+              </span>
+            </div>
+          </div>
+        </div>
+  
+      </div>
     </div>
-</section>
+  </section>
+  
