@@ -2,38 +2,8 @@
     <div class="container">
         <div class="dashboard_pg_sec">
             <div class="dashboard_link_sec">
-                <div class="side_bar">
-                    <div class="list-sidbar">
-                      <h4>روابط لوحة التحكم</h4>
-                      <hr />
-                      <ul>
-                        <li *ngFor="let item of sidebarItems">
-                          <ng-container *ngIf="!item.children">
-                            <a [routerLink]="item.route" routerLinkActive="active">
-                              <img [src]="item.icon" alt="" />
-                              <span>{{ item.label }}</span>
-                            </a>
-                          </ng-container>
-                  
-                          <ng-container *ngIf="item.children">
-                            <a class="btn" data-bs-toggle="collapse" href="#contentPages" role="button">
-                              <img [src]="item.icon" alt="" />
-                              <span>{{ item.label }}</span>
-                            </a>
-                            <div class="collapse collaps_item_list" id="contentPages">
-                              <div class="sm_card_list">
-                                <ul class="sm_list_dashboard">
-                                  <li *ngFor="let child of item.children">
-                                    <a [routerLink]="child.route">{{ child.label }}</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </ng-container>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <app-side-bar></app-side-bar>
+
             </div>
             <div class="dashboard_cards_sec">
                 <div class="create_all_prog">
@@ -49,7 +19,7 @@
                             <h5 class="title_text">البرامج التدريبية</h5>
                         </div>
                         <div class="log_in btn_general">
-                            <a routerLink="./dashboard/add-training-program" >
+                            <a routerLink="./dashboard/add-training-program">
                               +
                               إنشاء برنامج
                             </a>
@@ -144,111 +114,33 @@
                     <div class="row">
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
                         <div class="col-md-4 mt-4">
 
-                            <app-shared-card
-                                 *ngFor="let report of reports"
-                                 [title]="report.title"
-                                 [creator]="report.creator"
-                                 [createdDate]="report.createdDate"
-                                 [approver]="report.approver"
-                                 [approvedDate]="report.approvedDate"
-                                 [category]="report.category"
-                                 [participants]="report.participants"
-                                 [rating]="report.rating"
-                                 [tags]="report.tags"
-                                 [postType]="report.postType"
-                                 [postDate]="report.postDate"
-                                 [statusOptions]="report.statusOptions"
-                               ></app-shared-card>
+                            <app-shared-card *ngFor="let report of reports" [title]="report.title" [creator]="report.creator" [createdDate]="report.createdDate" [approver]="report.approver" [approvedDate]="report.approvedDate" [category]="report.category" [participants]="report.participants"
+                                [rating]="report.rating" [tags]="report.tags" [postType]="report.postType" [postDate]="report.postDate" [statusOptions]="report.statusOptions"></app-shared-card>
                         </div>
 
                     </div>

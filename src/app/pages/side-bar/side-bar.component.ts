@@ -1,11 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReportCardData, ReportService } from './services/report.service';
-import { SharedCardComponent } from "../../../../../../@shared/shared-card/shared-card.component";
-import { SideBarComponent } from '../../../../../../pages/side-bar/side-bar.component';
-
 interface SidebarItem {
   label: string;
   icon: string;
@@ -13,17 +8,12 @@ interface SidebarItem {
   children?: { label: string; route: string }[];
 }
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, SharedCardComponent,SideBarComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  selector: 'app-side-bar',
+  imports: [RouterModule,CommonModule],
+  templateUrl: './side-bar.component.html',
+  styleUrl: './side-bar.component.scss'
 })
-export class DashboardComponent {
-  postType = 'منشور';
-  postDate = '2025/01/20';
-  statusOptions = ['مغلق', 'موقوف'];
-  selectedStatus: string = '';
+export class SideBarComponent {
   sidebarItems: SidebarItem[] = [
     { label: 'المسارات التدريبية', icon: '01.svg', route: '/training-paths' },
     { label: 'البرامج التدريبية', icon: '02.svg', route: '/training-programs' },
@@ -48,14 +38,4 @@ export class DashboardComponent {
       ]
     }
   ];
-
-  reports: ReportCardData[] = [];
-
-  constructor(private reportService: ReportService) {}
-
-  ngOnInit() {
-    this.reportService.getReportCards().subscribe(data => {
-      this.reports = data;
-    });
-  }
 }

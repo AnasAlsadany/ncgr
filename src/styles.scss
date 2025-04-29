@@ -323,7 +323,7 @@ button:active {
         background: $main-background-color;
         padding: 9px 18px;
         border-radius: 6px;
-        color: $white-color;
+        color: $white-color !important;
         font-size: $main-fontSize-16;
         font-weight: 600;
     }
