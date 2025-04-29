@@ -24,7 +24,7 @@ export const routes: Routes = [
       { path: 'help', component: HelpComponent },
       { path: 'aboutacademy', component: AboutAcademyComponent },
       { path: 'TrainingServices', component: TrainingServicesComponent },
-      { path: 'CreateTrainingServices', component: CreateTrainingServicesComponent },
+      { path: 'createTrainingServices', component: CreateTrainingServicesComponent },
     ]
   },
   { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
