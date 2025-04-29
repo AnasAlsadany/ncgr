@@ -1,0 +1,85 @@
+<div class="add-training-container">
+  <h1 class="page-title">إنشاء برنامج تدريبي</h1>
+
+  <!-- Step Indicator -->
+  <div class="steps-indicator">
+    <div
+      class="step-item"
+      [class.active]="currentStep >= 1"
+      [class.completed]="currentStep > 1"
+    >
+      <div class="step-number">1</div>
+      <div class="step-label">
+        <div class="step-title">الخطوة الأولى</div>
+        <div class="step-subtitle">المعلومات الأساسية</div>
+      </div>
+    </div>
+    <div class="step-line" [class.active]="currentStep >= 2"></div>
+    <div
+      class="step-item"
+      [class.active]="currentStep >= 2"
+      [class.completed]="currentStep > 2"
+    >
+      <div class="step-number">2</div>
+      <div class="step-label">
+        <div class="step-title">الخطوة الثانية</div>
+        <div class="step-subtitle">الفئة المستهدفة</div>
+      </div>
+    </div>
+    <div class="step-line" [class.active]="currentStep >= 3"></div>
+    <div class="step-item" [class.active]="currentStep >= 3">
+      <div class="step-number">3</div>
+      <div class="step-label">
+        <div class="step-title">الخطوة الثالثة</div>
+        <div class="step-subtitle">المصادر والموارد</div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="trainingForm">
+    <!-- Step One Content -->
+    <div class="step-content" *ngIf="currentStep === 1">
+      <app-step-one [formGroup]="trainingForm"></app-step-one>
+    </div>
+
+    <!-- Step Two Content -->
+    <div class="step-content" *ngIf="currentStep === 2">
+      <app-step-two [formGroup]="trainingForm"></app-step-two>
+    </div>
+
+    <!-- Step Three Content -->
+    <div class="step-content" *ngIf="currentStep === 3">
+      <app-step-three [formGroup]="trainingForm"></app-step-three>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="form-navigation">
+      <button
+        *ngIf="currentStep > 1"
+        type="button"
+        class="btn btn-secondary"
+        (click)="previousStep()"
+      >
+        السابق
+      </button>
+
+      <button
+        *ngIf="currentStep < 3"
+        type="button"
+        class="btn btn-primary"
+        (click)="nextStep()"
+      >
+        التالي
+      </button>
+
+      <button
+        *ngIf="currentStep === 3"
+        type="button"
+        class="btn btn-success"
+        (click)="submitForm()"
+      >
+        إنشاء
+      </button>
+    </div>
+  </form>
+</div>

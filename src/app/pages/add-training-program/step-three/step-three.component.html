@@ -1,0 +1,69 @@
+<div class="step-three-form" [formGroup]="formGroup">
+  <div class="row">
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="language-selector">
+          <label class="form-label d-block">تكلفة البرنامج </label>
+          <div class="language-option">
+            <input
+              type="radio"
+              id="private"
+              name="private"
+              value="ar"
+              checked
+              (change)="isCostFree = false"
+            />
+            <label for="private">مجاني</label>
+          </div>
+          <div class="language-option">
+            <input
+              type="radio"
+              id="general"
+              name="private"
+              value="en"
+              (change)="isCostFree = true"
+            />
+            <label for="general">مدفوع</label>
+          </div>
+        </div>
+      </div>
+      <!-- Target category only shows when program type is private -->
+      <div class="col-md-6" *ngIf="isCostFree">
+        <div class="form-group mb-4">
+          <label for="programName" class="form-label">الرسوم </label>
+          <input
+            type="text"
+            id="programName"
+            class="form-control"
+            formControlName="programName"
+            [ngClass]="{
+              'is-invalid':
+                formGroup.get('programName')?.invalid &&
+                formGroup.get('programName')?.touched
+            }"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Left Column -->
+      <div class="col-md-12">
+        <!-- Program Name - Arabic -->
+        <div class="form-group mb-4">
+          <label for="programName" class="form-label">قالب الشهادة </label>
+          <input
+            type="text"
+            id="programName"
+            class="form-control"
+            formControlName="programName"
+            [ngClass]="{
+              'is-invalid':
+                formGroup.get('programName')?.invalid &&
+                formGroup.get('programName')?.touched
+            }"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

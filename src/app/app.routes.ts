@@ -10,13 +10,15 @@ import { HelpComponent } from './layout/dashboard-layout/compnents/pages/pages/h
 import { ProfileComponent } from './layout/dashboard-layout/compnents/pages/pages/profile/profile.component';
 import { SettingsComponent } from './layout/dashboard-layout/compnents/pages/pages/settings/settings.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
+import { AddTrainingProgramComponent } from './pages/add-training-program/add-training-program.component';
+import { TrainingProgramDetailsComponent } from './pages/training-program-details/training-program-details.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: DashboardLayoutComponent,
     children: [
-      { path: '', component: HomepageComponent },
+      { path: 'home', component: HomepageComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'forms', component: FormsComponent },
       { path: 'profile', component: ProfileComponent },
@@ -25,7 +27,9 @@ export const routes: Routes = [
       { path: 'aboutacademy', component: AboutAcademyComponent },
       { path: 'TrainingServices', component: TrainingServicesComponent },
       { path: 'createTrainingServices', component: CreateTrainingServicesComponent },
+      { path: 'add-training-program', component: AddTrainingProgramComponent },
+      { path: 'training-program-details', component: TrainingProgramDetailsComponent },
     ]
   },
-  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

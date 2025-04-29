@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './compnents/header/header.component';
 import { NavbarComponent } from './compnents/navbar/navbar.component';
-import { FooterComponent } from './compnents/pages/pages/dashboard/footer/footer.component';
+import { FooterComponent } from './compnents/footer/footer.component';
 
 
 @Component({

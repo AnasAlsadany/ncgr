@@ -13,7 +13,7 @@ export class NavbarComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    this.isScrolled = scrollTop > 50; // يعني لو سكرول أكتر من 50 بيكسل ضيف الكلاس
+    this.isScrolled = scrollTop > 50;
   }
   public toggleField() {
     this.classToggled = !this.classToggled;
