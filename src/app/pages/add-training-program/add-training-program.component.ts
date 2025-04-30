@@ -10,6 +10,8 @@ import {
 import { StepOneComponent } from './step-one/step-one.component';
 import { StepTwoComponent } from './step-two/step-two.component';
 import { StepThreeComponent } from './step-three/step-three.component';
+import { SearchFilterComponent } from '../search-filter/search-filter.component';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
   selector: 'app-add-training-program',
@@ -21,6 +23,8 @@ import { StepThreeComponent } from './step-three/step-three.component';
     StepOneComponent,
     StepTwoComponent,
     StepThreeComponent,
+    SearchFilterComponent,
+    SideBarComponent,
   ],
   templateUrl: './add-training-program.component.html',
   styleUrl: './add-training-program.component.scss',

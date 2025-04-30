@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AboutAcademyComponent } from './pages/about-academy/about-academy.component';
-import { TrainingServicesComponent } from './pages/training-services/training-services.component';
+import { TrainingProgramsComponent } from './pages/training-programs/training-programs.component';
 import { CreateTrainingServicesComponent } from './pages/create-training-services/create-training-services.component';
 import { DashboardComponent } from './layout/dashboard-layout/compnents/pages/pages/dashboard/dashboard.component';
 import { FormsComponent } from './layout/dashboard-layout/compnents/pages/pages/forms/forms.component';
@@ -18,6 +18,7 @@ export const routes: Routes = [
     path: '',
     component: DashboardLayoutComponent,
     children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomepageComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'forms', component: FormsComponent },
@@ -25,7 +26,7 @@ export const routes: Routes = [
       { path: 'settings', component: SettingsComponent },
       { path: 'help', component: HelpComponent },
       { path: 'aboutacademy', component: AboutAcademyComponent },
-      { path: 'TrainingServices', component: TrainingServicesComponent },
+      { path: 'training-services', component: TrainingProgramsComponent },
       { path: 'createTrainingServices', component: CreateTrainingServicesComponent },
       { path: 'add-training-program', component: AddTrainingProgramComponent },
       { path: 'training-program-details', component: TrainingProgramDetailsComponent },
