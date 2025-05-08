@@ -12,6 +12,7 @@ import { SettingsComponent } from './layout/dashboard-layout/compnents/pages/pag
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 import { AddTrainingProgramComponent } from './pages/add-training-program/add-training-program.component';
 import { TrainingProgramDetailsComponent } from './pages/training-program-details/training-program-details.component';
+import { TrainingContentComponent } from './pages/training-content/training-content.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,7 @@ export const routes: Routes = [
       { path: 'createTrainingServices', component: CreateTrainingServicesComponent },
       { path: 'add-training-program', component: AddTrainingProgramComponent },
       { path: 'training-program-details', component: TrainingProgramDetailsComponent },
+      { path: 'TrainingContent', component: TrainingContentComponent },
     ]
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
