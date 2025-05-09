@@ -1471,7 +1471,8 @@ h1.modal-title.modal_title {
         padding-bottom: 5px;
     }
     input,
-    textarea {
+    textarea,
+    select {
         width: 100%;
         border: 1px solid #D2D6DB;
         padding: 5px 10px;
@@ -1713,4 +1714,88 @@ h1.modal-title.modal_title {
         border-radius: 5px;
         margin: 0 2px;
     }
+}
+
+.delete_text {
+    @include flex-bar-between;
+    input {
+        width: 85%;
+    }
+}
+
+.add_new_choose {
+    button {
+        background-color: #fff;
+        border: 1px solid #d2d6db;
+        font-weight: 500;
+        padding: 10px 25px;
+        transition: all ease-in 0.15s;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        &:hover {
+            background: #166a45;
+            border: 1px solid #166a45;
+            color: #fff;
+            transition: all ease-in 0.15s;
+        }
+        img {
+            width: 25px;
+        }
+    }
+}
+
+.test_ur_info {
+    @include flex-bar-between;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #00000047;
+    .info_data {
+        h5 {
+            color: $main-background-color;
+            padding-bottom: 10px;
+            font-size: $main-fontSize-24;
+        }
+        span {
+            color: #212529;
+            font-size: $main-fontSize-18;
+        }
+    }
+}
+
+.all_quest_info {
+    @include flex-bar-between;
+}
+
+.question_list h6 {
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.questio_title {
+    padding: 5px 0;
+    label {
+        font-size: 16px;
+        padding-inline-start: 10px;
+    }
+}
+
+.question_check {
+    margin: 20px 0;
+}
+
+.correct_answer span {
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    border: dashed 1px #166a45;
+    margin: 20px 0;
+    display: block;
+    color: #166a45;
+}
+
+.question_action {
+    display: flex;
+    align-items: center;
 }
