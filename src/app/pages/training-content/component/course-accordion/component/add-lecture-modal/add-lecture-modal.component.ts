@@ -20,9 +20,9 @@ export class AddLectureModalComponent {
     titleAr: '',
     titleEn: '',
     type: 'text',
-    videoType: 'file', // للفيديو
-    testType: 'electronic', // للاختبار
-    hasDeadline: 'false' // للاختبار
+    videoType: 'file', 
+    testType: 'electronic',
+    hasDeadline: 'false' 
   };
 
   getLectureTypeName(type: string): string {
@@ -43,10 +43,8 @@ export class AddLectureModalComponent {
   }
 
   onSave(): void {
-    // تعيين نوع المحاضرة
     this.newLecture.type = this.lectureType;
     
-    // إرسال البيانات
     this.save.emit(this.newLecture as Lecture);
     this.closeModal();
   }
