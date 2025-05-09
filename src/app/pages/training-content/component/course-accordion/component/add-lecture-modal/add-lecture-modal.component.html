@@ -25,15 +25,12 @@
                      placeholder="ادخل اسم المحاضرة بالانجليزية">
             </div>
 
-            <!-- محتوى إضافي حسب نوع المحاضرة -->
             <ng-container [ngSwitch]="lectureType">
-              <!-- 1. محتوى نصي -->
               <div *ngSwitchCase="'text'" class="form_c">
                 <label for="lectureContent">محتوي المحاضرة (نص)</label>
                 <textarea id="lectureContent" [(ngModel)]="newLecture.content" rows="5"></textarea>
               </div>
 
-              <!-- 2. فيديو -->
               <div *ngSwitchCase="'video'" class="form_c">
                 <div class="radio_label">
                   <input type="radio" id="videoFile" name="videoType" value="file" 
@@ -53,7 +50,6 @@
                 </div>
               </div>
 
-              <!-- 3. ملف PDF -->
               <div *ngSwitchCase="'pdf'" class="form_c">
                 <div class="choose_result">
                   <label for="pdfFile">اضف ملف PDF</label>
@@ -61,7 +57,6 @@
                 </div>
               </div>
 
-              <!-- 4. ملف صوتي -->
               <div *ngSwitchCase="'audio'" class="form_c">
                 <div class="choose_result">
                   <label for="audioFile">اضف ملف صوت MP3</label>
@@ -69,7 +64,6 @@
                 </div>
               </div>
 
-              <!-- 5. ملف صورة -->
               <div *ngSwitchCase="'image'" class="form_c">
                 <div class="choose_result">
                   <label for="imageFile">اضف ملف صورة</label>
@@ -77,7 +71,6 @@
                 </div>
               </div>
 
-              <!-- 6. اختبار -->
               <div *ngSwitchCase="'test'" class="text_type">
                 <div class="form_c">
                   <label for="testDuration">مدة الاختبار (بالدقائق)</label>
