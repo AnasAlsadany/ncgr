@@ -1,0 +1,126 @@
+<div class="accordion">
+  <div class="accordion-item accordion_list_d" *ngFor="let section of sections; let i = index" cdkDropList
+    [cdkDropListData]="section.lectures" (cdkDropListDropped)="dropLecture($event)">
+    <div class="accordion-header acc_list_bar">
+      <button class="accordion-button coolaps_btn" type="button" (click)="toggleSection(section.id)">
+      </button>
+
+      <div class="accordion_heder">
+        <div class="accordion_icon_l">
+          <img src="acc_icon_1.svg" alt="">
+          <span>تغيير ترتيب القسم</span>
+        </div>
+        <div class="accordion_icon_l">
+          <h6>{{section.titleAr}}</h6>
+        </div>
+        <div class="accordion_icon_l">
+          <button type="button" class="btn" (click)="openEditModal(section)">
+            <img src="acc_icon_2.svg" alt="">
+            <span>تعديل</span>
+          </button>
+        </div>
+        <div class="accordion_icon_l">
+          <button type="button" class="btn" (click)="openDeleteModal(section)">
+            <img src="acc_icon_3.svg" alt="">
+            <span>حذف</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="add-new-lecture">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span> اضافة محاضرة +</span>
+          </button>
+          <ul class="dropdown-menu menu_needs_list">
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'video')">
+                <img src="acc_icon_40.svg" alt="">
+                <span>اضف فيديو</span>
+              </button></li>
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'text')">
+                <img src="acc_icon_41.svg" alt="">
+                <span>اضف نص</span>
+              </button></li>
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'pdf')">
+                <img src="acc_icon_42.svg" alt="">
+                <span>اضف وثيقة (PDF)</span>
+              </button></li>
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'audio')">
+                <img src="acc_icon_43.svg" alt="">
+                <span>اضف ملف صوت</span>
+              </button></li>
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'image')">
+                <img src="acc_icon_44.svg" alt="">
+                <span>اضف ملف صورة</span>
+              </button></li>
+            <li><button class="dropdown-item btn" type="button" (click)="openAddLectureModal(section, 'test')">
+                <img src="acc_icon_45.svg" alt="">
+                <span>اضف اختبار</span>
+              </button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div [id]="'collapse'+section.id" class="accordion-collapse collapse" [class.show]="activeSectionId === section.id">
+      <div class="accordion-body small_card">
+        <div class="list_in_card" *ngFor="let lecture of section.lectures" cdkDrag [cdkDragData]="lecture">
+          <div class="date_in_card">
+            <div class="accordion_icon_l">
+              <img src="acc_icon_1.svg" alt="">
+              <span>تغيير ترتيب القسم</span>
+            </div>
+            <div class="content_type accordion_icon_l">
+              <img [src]="getLectureIcon(lecture.type)" alt="">
+              <span>محتوي {{lecture.type === 'test' ? 'اختبار' : lecture.type}}</span>
+            </div>
+            <h5>{{lecture.titleAr}}</h5>
+          </div>
+          <div class="action_btns_t">
+            <button class="dropdown-item accordion_icon_l btn" type="button" (click)="openAddTextModal(lecture)">
+              <img src="acc_icon_46.svg" alt="">
+              <span>اضف نص</span>
+            </button>
+
+            <div class="accordion_icon_l">
+              <button type="button" class="btn" (click)="openEditLectureModal(lecture)">
+                <img src="acc_icon_2.svg" alt="">
+                <span>تعديل</span>
+              </button>
+            </div>
+
+            <div class="accordion_icon_l">
+              <button type="button" class="btn" (click)="openDeleteLectureModal(lecture)">
+                <img src="acc_icon_3.svg" alt="">
+                <span>حذف</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-edit-section-modal [isOpen]="showEditModal" [section]="selectedSection" (close)="showEditModal = false"
+    (save)="onSaveSection($event)">
+  </app-edit-section-modal>
+
+  <app-delete-section-modal [isOpen]="showDeleteModal" [sectionTitle]="selectedSection?.titleAr || ''"
+    (close)="showDeleteModal = false" (confirm)="onConfirmDelete()">
+  </app-delete-section-modal>
+
+  <app-add-lecture-modal [isOpen]="showAddLectureModal" [lectureType]="selectedLectureType"
+    (close)="showAddLectureModal = false" (save)="onAddLecture($event)">
+  </app-add-lecture-modal>
+
+  <app-add-text-modal [isOpen]="showAddTextModal" [lectureTitle]="selectedLecture?.titleAr || ''"
+    (close)="showAddTextModal = false" (save)="onSaveLectureText($event)">
+  </app-add-text-modal>
+
+  <app-edit-lecture-modal [isOpen]="showEditLectureModal" [lecture]="selectedLecture"
+    (close)="showEditLectureModal = false" (save)="onEditLecture($event)">
+  </app-edit-lecture-modal>
+
+  <app-delete-lecture-modal [isOpen]="showDeleteLectureModal" [lectureTitle]="selectedLecture?.titleAr || ''"
+    (close)="showDeleteLectureModal = false" (confirm)="onDeleteLecture()">
+  </app-delete-lecture-modal>

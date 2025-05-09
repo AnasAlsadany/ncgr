@@ -31,7 +31,7 @@ export const routes: Routes = [
       { path: 'createTrainingServices', component: CreateTrainingServicesComponent },
       { path: 'add-training-program', component: AddTrainingProgramComponent },
       { path: 'training-program-details', component: TrainingProgramDetailsComponent },
-      { path: 'TrainingContent', component: TrainingContentComponent },
+      { path: 'training-content', component: TrainingContentComponent },
     ]
   },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },

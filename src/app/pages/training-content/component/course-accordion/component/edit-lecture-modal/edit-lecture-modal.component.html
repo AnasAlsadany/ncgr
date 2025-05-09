@@ -1,0 +1,147 @@
+<div class="modal fade" [class.show]="isOpen" [style.display]="isOpen ? 'block' : 'none'">
+    <div class="modal-dialog" [class.modal-lg]="editedLecture?.type === 'test'">
+      <div class="modal-content">
+        <div class="modal-header m_header">
+          <h1 class="modal-title modal_title">
+            <img [src]="'assets/images/acc_icon_' + 
+                       (editedLecture?.type === 'test' ? '45' : 
+                        editedLecture?.type === 'video' ? '40' : 
+                        editedLecture?.type === 'pdf' ? '42' : 
+                        editedLecture?.type === 'audio' ? '43' : 
+                        editedLecture?.type === 'image' ? '44' : '2') + '.svg'" alt="">
+            <span>تعديل {{getLectureTypeName(editedLecture?.type)}}</span>
+          </h1>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form_modal" *ngIf="editedLecture">
+            <div class="form_c">
+              <label for="lectureTitleAr">عنوان المحاضرة (بالعربية)</label>
+              <input type="text" id="lectureTitleAr" [(ngModel)]="editedLecture.titleAr">
+            </div>
+            <div class="form_c">
+              <label for="lectureTitleEn">عنوان المحاضرة (بالانجليزية)</label>
+              <input type="text" id="lectureTitleEn" [(ngModel)]="editedLecture.titleEn">
+            </div>
+
+            <ng-container [ngSwitch]="editedLecture.type">
+              <div *ngSwitchCase="'text'" class="form_c">
+                <label for="lectureContent">محتوي المحاضرة</label>
+                <textarea id="lectureContent" [(ngModel)]="editedLecture.content" rows="5"></textarea>
+              </div>
+
+              <div *ngSwitchCase="'video'" class="form_c">
+                <div class="radio_label">
+                  <input type="radio" id="editVideoFile" name="editVideoType" value="file"
+                        [(ngModel)]="editedLecture.videoType">
+                  <label for="editVideoFile">ملف فيديو</label>
+                </div>
+                <div class="choose_result" *ngIf="editedLecture.videoType === 'file'">
+                  <label>الملف الحالي: {{editedLecture.fileUrl}}</label>
+                  <input type="file" (change)="onFileChange($event)" accept=".mp4">
+                </div>
+                <div class="radio_label">
+                  <input type="radio" id="editVideoLink" name="editVideoType" value="link"
+                        [(ngModel)]="editedLecture.videoType">
+                  <label for="editVideoLink">رابط يوتيوب</label>
+                </div>
+                <div class="choose_result" *ngIf="editedLecture.videoType === 'link'">
+                  <input type="text" [(ngModel)]="editedLecture.fileUrl" placeholder="رابط اليوتيوب">
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'pdf'" class="form_c">
+                <div class="choose_result">
+                  <label>الملف الحالي: {{editedLecture.fileUrl}}</label>
+                  <input type="file" (change)="onFileChange($event)" accept=".pdf">
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'audio'" class="form_c">
+                <div class="choose_result">
+                  <label>الملف الحالي: {{editedLecture.fileUrl}}</label>
+                  <input type="file" (change)="onFileChange($event)" accept=".mp3">
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'image'" class="form_c">
+                <div class="choose_result">
+                  <label>الصورة الحالية: {{editedLecture.fileUrl}}</label>
+                  <input type="file" (change)="onFileChange($event)" accept="image/*">
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'test'" class="text_type">
+                <div class="form_c">
+                  <label for="testDuration">مدة الاختبار (بالدقائق)</label>
+                  <input type="number" id="testDuration" [(ngModel)]="editedLecture.duration">
+                </div>
+                
+                <h6>نوع الاختبار</h6>
+                <div class="test_type_form">
+                  <div class="check_type">
+                    <div class="form_rad">
+                      <input type="radio" id="electronicTest" name="testType" value="electronic"
+                             [(ngModel)]="editedLecture.testType">
+                      <label for="electronicTest">الكتروني</label>
+                    </div>
+                    <div class="form_rad">
+                      <input type="radio" id="attendanceTest" name="testType" value="attendance"
+                             [(ngModel)]="editedLecture.testType">
+                      <label for="attendanceTest">حضوري</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form_c" *ngIf="editedLecture.testType === 'attendance'">
+                    <label for="testLocation">مكان الاختبار</label>
+                    <input type="text" id="testLocation" [(ngModel)]="editedLecture.location">
+                  </div>
+                </div>
+
+                <div class="form_c">
+                  <label for="totalScore">مجموع الدرجات</label>
+                  <input type="number" id="totalScore" [(ngModel)]="editedLecture.totalScore">
+                </div>
+                <div class="form_c">
+                  <label for="passingScore">درجة النجاح</label>
+                  <input type="number" id="passingScore" [(ngModel)]="editedLecture.passingScore">
+                </div>
+
+                <h6>هل الاختبار محدد بموعد؟</h6>
+                <div class="test_type_form">
+                  <div class="check_type">
+                    <div class="form_rad">
+                      <input type="radio" id="hasDeadlineYes" name="hasDeadline" value="true"
+                             [(ngModel)]="editedLecture.hasDeadline">
+                      <label for="hasDeadlineYes">نعم</label>
+                    </div>
+                    <div class="form_rad">
+                      <input type="radio" id="hasDeadlineNo" name="hasDeadline" value="false"
+                             [(ngModel)]="editedLecture.hasDeadline">
+                      <label for="hasDeadlineNo">لا</label>
+                    </div>
+                  </div>
+                  
+                  <div class="form_c" *ngIf="editedLecture.hasDeadline === 'true'">
+                    <label for="testDate">تاريخ الاختبار</label>
+                    <input type="date" id="testDate" [(ngModel)]="editedLecture.testDate">
+                  </div>
+                  <div class="form_c" *ngIf="editedLecture.hasDeadline === 'true'">
+                    <label for="testTime">وقت الاختبار</label>
+                    <input type="time" id="testTime" [(ngModel)]="editedLecture.testTime">
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="modal_f_btns">
+            <button type="button" class="add" (click)="onSave()">حفظ التعديلات</button>
+            <button type="button" (click)="closeModal()">الغاء</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="modal-backdrop fade" [class.show]="isOpen" [style.display]="isOpen ? 'block' : 'none'"></div>
